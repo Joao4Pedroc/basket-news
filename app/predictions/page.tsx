@@ -1,4 +1,7 @@
 function Predictions() {
+  //nba predictions
+  //basketball predictions
+  //rummors?
   return <div>predictions</div>;
 }
 

@@ -18,9 +18,6 @@ export default function Navigation() {
         <li>
           <Link href="/community">Community</Link>
         </li>
-        <li>
-          <Link href="/">More...</Link>
-        </li>
       </ul>
       <div className="flex gap-10 mr-8">
         <HiCog />
