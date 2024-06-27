@@ -1,23 +1,31 @@
 import Link from "next/link";
-import { HiCog } from "react-icons/hi";
+import { HiCog, HiUser } from "react-icons/hi";
 
 export default function Navigation() {
   return (
-    <nav>
-      <ul className="flex justify-between gap-[5rem]">
+    <nav className="flex justify-between w-full ">
+      <span className="ml-8">**IMAGE**</span>
+      <ul className="flex gap-14">
         <li>
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/">Games</Link>
+          <Link href="/games">Games</Link>
         </li>
         <li>
-          <Link href="/">Predictions</Link>
+          <Link href="/predictions">Predictions</Link>
         </li>
         <li>
-          <Link href="/">Community</Link>
+          <Link href="/community">Community</Link>
+        </li>
+        <li>
+          <Link href="/">More...</Link>
         </li>
       </ul>
+      <div className="flex gap-10 mr-8">
+        <HiCog />
+        <HiUser />
+      </div>
     </nav>
   );
 }
