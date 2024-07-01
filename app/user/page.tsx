@@ -1,28 +1,24 @@
 "use client";
 
-import { useEffect } from "react";
-import { getAllTeams } from "../_services/data_service";
+import { Team } from "../_services/data_service";
+import useTeams from "../_hooks/useTeams";
 
 function User() {
-  const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-  let teams;
+  const { teams } = useTeams();
 
-  useEffect(() => {
-    const fetchTeams = async () => {
-      try {
-        if (!API_KEY) {
-          throw new Error("API key is not defined");
-        }
-        const teams = await getAllTeams(API_KEY);
-      } catch (e) {
-        console.log((e as Error).message);
-      }
-    };
-
-    fetchTeams();
-  }, [API_KEY]);
-
-  return <div>{teams}</div>;
+  return (
+    <div>
+      {teams.length > 0 ? (
+        teams.map((team: Team) => (
+          <div key={team.id}>
+            <p>{`Team ID: ${team.id}, Name: ${team.full_name}, City: ${team.city}, Conference: ${team.conference}, Division: ${team.division}`}</p>
+          </div>
+        ))
+      ) : (
+        <p>No teams found.</p>
+      )}
+    </div>
+  );
 }
 
 export default User;

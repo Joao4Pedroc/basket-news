@@ -20,9 +20,16 @@ export interface Game {
   status: string;
 }
 
-// fix that shit latter
+export interface Player {
+  id: number;
+  first_name: string;
+  last_name: string;
+  position: string;
+  team: Team;
+}
+
 export async function getAllGames(API_KEY: string): Promise<Game[]> {
-  const response = await fetch("https://api.balldontlie.io/v1/games", {
+  const response = await fetch("https://api.balldontlie.io/v1/games/1", {
     headers: { Authorization: `${API_KEY}` },
   });
 
@@ -31,6 +38,7 @@ export async function getAllGames(API_KEY: string): Promise<Game[]> {
   }
 
   const data = await response.json();
+  console.log(data.data);
   return data.data;
 }
 
@@ -40,7 +48,7 @@ export async function getAllTeams(API_KEY: string): Promise<Team[]> {
   });
 
   if (!response.ok) {
-    throw new Error("Failed to fetch games");
+    throw new Error("Failed to fetch teams");
   }
 
   const data = await response.json();
