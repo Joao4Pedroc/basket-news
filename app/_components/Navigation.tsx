@@ -21,7 +21,9 @@ export default function Navigation() {
       </ul>
       <div className="flex gap-10 mr-8">
         <HiCog />
-        <HiUser />
+        <Link href="/user">
+          <HiUser />
+        </Link>
       </div>
     </nav>
   );

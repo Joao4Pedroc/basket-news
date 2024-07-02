@@ -54,3 +54,16 @@ export async function getAllTeams(API_KEY: string): Promise<Team[]> {
   const data = await response.json();
   return data.data;
 }
+
+export async function getAllPlayers(API_KEY: string): Promise<Player[]> {
+  const response = await fetch("https://api.balldontlie.io/v1/players", {
+    headers: { Authorization: `${API_KEY}` },
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch players");
+  }
+
+  const data = await response.json();
+  return data.data;
+}
