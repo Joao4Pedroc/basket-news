@@ -9,11 +9,13 @@ function User() {
   //fix this
   const { teams } = useTeams();
   const { state, dispatch } = useUser();
-  const { players } = usePlayers();
 
   const handleSetFavoriteTeam = (team: Team) => {
+    console.log(`Favorite Team: ${team.full_name}, ${state.favoriteTeam}`);
     dispatch({ type: "SET_FAVORITE_TEAM", payload: team.full_name });
   };
+
+  console.log("Current Favorite Team:", state.favoriteTeam);
 
   return (
     <div>
