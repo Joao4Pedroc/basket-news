@@ -1,9 +1,9 @@
 "use client";
 
-import { Team } from "../_services/data_service";
 import { useUser } from "../_context/UserContext";
 import useTeams from "../_hooks/useTeams";
 import usePlayers from "../_hooks/usePlayers";
+import { Team } from "../types";
 
 function User() {
   //fix this

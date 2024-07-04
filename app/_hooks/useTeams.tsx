@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Team, getAllTeams } from "../_services/data_service";
+import { getAllTeams } from "../_services/data_service";
+import { Team } from "../types";
 
 function useTeams() {
   const API_KEY = process.env.NEXT_PUBLIC_API_KEY;

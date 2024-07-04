@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
-import { Player, getAllPlayers } from "../_services/data_service";
-
-interface usePlayerResult {
-  players: Player[];
-  isLoading: boolean;
-  error: string | null;
-}
+import { getAllPlayers } from "../_services/data_service";
+import { Player } from "../types";
 
 function usePlayers() {
   const API_KEY = process.env.NEXT_PUBLIC_API_KEY;

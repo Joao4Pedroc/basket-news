@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getAllGames, Game } from "../_services/data_service";
+import { getAllGames } from "../_services/data_service";
+import { Game } from "../types";
 
 function Games() {
   const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
@@ -25,8 +26,6 @@ function Games() {
 
     fetchGames();
   }, []);
-
-  /* FIX LATER */
 
   return <div></div>;
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useReducer, ReactNode } from "react";
+import { UserState } from "../types";
 
 // Define the initial state
 const initialState: UserState = {
