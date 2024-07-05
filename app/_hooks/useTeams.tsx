@@ -5,6 +5,7 @@ import { Team } from "../types";
 function useTeams() {
   const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
   const [teams, setTeams] = useState<Team[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchTeams = async () => {
@@ -26,7 +27,7 @@ function useTeams() {
     fetchTeams();
   }, []);
 
-  return { teams };
+  return { teams, error };
 }
 
 export default useTeams;
